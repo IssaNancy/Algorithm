@@ -5,6 +5,7 @@
 @Author     Nancy
 @Version    1.0
 @Desciption: 二分查找，输入必须是一个有序的元素列表，如果要查找的元素包含在列表中，二分查找返回其位置，否则返回null
+对于n个元素的列表，二分查找最多需要log(2)(n)步，简单查找最多需要n步
 '''
 
 def binary_search(list,item):
