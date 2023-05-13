@@ -22,7 +22,7 @@ def findSmallest(array):
             smallest=array[i]
     return smallest_index
 
-def selectionSort(array):
+def selectionSortA(array):
     '''
     sort the array
     :param array: array needed to be sorted
@@ -34,4 +34,19 @@ def selectionSort(array):
         new_array.append(array.pop(smallest))
     return new_array
 
-print(selectionSort([1,2,0,4,3,5,7,8]))
+def selectionSortB(array):
+    '''
+    自己的优化
+    :param array:
+    :return:
+    '''
+    for i in range(len(array)):
+        smallest_index=findSmallest(array[i:])+i
+        if i!=smallest_index:
+            temp=array[smallest_index]
+            array[smallest_index]=array[i]
+            array[i]=temp
+    return array
+
+print(selectionSortA([1,2,0,4,3,5,7,8]))
+print(selectionSortB([1,2,0,4,3,5,7,9]))
